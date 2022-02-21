@@ -20,7 +20,7 @@ ht()
 title("Gallows")
 
 def goToCoords(word):
-    center = (11 - len(word)) // 2
+    center = (13 - len(word)) // 2
     up()
     x_cell = x + btnSize_withDstns * center
     y_cell = y + btnSize_withDstns * 3
@@ -67,7 +67,7 @@ class View:
     def drawCell(self, word):
         if len(word) > 11:
             bbt_s = 40
-            center = (11 * btnSize) - (len(word) * bbt_s)
+            center = (14 * btnSize) - (len(word) * bbt_s)
             up()
             x_cell = x + center
             y_cell = y + btnSize_withDstns * 3
@@ -131,12 +131,12 @@ class View:
         tt2.clear()
         if len(word) > 11:
             bbt_s = 40
-            center = (11 * btnSize) - (len(word) * bbt_s)
+            center = (14 * btnSize) - (len(word) * bbt_s)
             x_cell = x + center
             y_cell = y + btnSize_withDstns * 3
         else:
             bbt_s = 65
-            center = (11 - len(word)) // 2
+            center = (13 - len(word)) // 2
             x_cell = x + btnSize_withDstns * center
             y_cell = y + btnSize_withDstns * 3
         tt2.up()
@@ -153,11 +153,11 @@ class View:
                 textS = 72
                 dis_x = 20
                 dis_y = -23
-            if len(word) >= 11 and word[i] != "*":
+            if len(word) > 11 and word[i] != "*":
                 textS = 30
                 dis_x = 12
                 dis_y = 6
-            if len(word) >= 11 and word[i] == "*":
+            if len(word) > 11 and word[i] == "*":
                 textS = 19
                 dis_x = 17
                 dis_y = 5
@@ -189,7 +189,7 @@ if __name__ == "__main__":
         someFunc("hjdsgvjh")
 
     def ng(x,y):
-        view.newGame("***new***")
+        view.newGame("***new*")
 
     def f(letter):
         fp(print)
@@ -197,7 +197,7 @@ if __name__ == "__main__":
 
 
     view = View(f, ng)
-    view.newGame("**dffg**")
+    view.newGame("**dffg********")
     view.printSign()
     #view.newGame("abc***")
     view.run()

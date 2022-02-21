@@ -2,7 +2,7 @@ from model import *
 from view import *
 
 def turn(letter):
-    while model.getLives() > 0 and not model.checkWin():
+    if model.getLives() > 0 and not model.checkWin():
         res = model.turn(letter)
         print(res, letter)
         if res == 0:
@@ -10,6 +10,7 @@ def turn(letter):
         if res == 1:
             view.background(model.penalty)
         view.drawWords(model.getVisible())
+        return
     if model.getLives():
         view.printSign()
     else:
